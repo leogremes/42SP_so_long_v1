@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leda-sil <leda-sil@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: super_leo <super_leo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 16:01:20 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/10 00:12:33 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/10 08:34:58 by super_leo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ void	free_enemies_list(t_data *sl);
 void	get_animated_nodes(t_data *sl);
 void	get_images(t_data *sl);
 int		screen_update(t_data *sl);
+void	*point_to_image(unsigned int row, unsigned int col, t_data *sl);
+void	*point_to_number_image(int n, t_data *sl);
 
 //UTILS FUNCTIONS
 void	ft_putchar(char c);
