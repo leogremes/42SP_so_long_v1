@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: super_leo <super_leo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 23:41:44 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/10 08:36:25 by super_leo        ###   ########.fr       */
+/*   Updated: 2022/09/10 13:03:43 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,11 @@ int	screen_update(t_data *sl)
 	unsigned int	col;
 	void			*img_ptr;
 
-	tick_counter(sl);
-	print_banner(sl);
+	
 	if (sl->win)
 	{
+		tick_counter(sl);
+		print_banner(sl);
 		row = -1;
 		while (++row < sl->rows)
 		{
@@ -87,4 +88,13 @@ int	screen_update(t_data *sl)
 		}
 	}
 	return (0);
+}
+
+void	close_game(t_data *sl)
+{
+	destroy_window(sl);
+	free_static_images(sl);
+	free_animated_images(sl);
+	free_map(sl);
+	free_enemies_list(sl);
 }

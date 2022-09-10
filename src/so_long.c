@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: super_leo <super_leo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:39:47 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/10 07:59:40 by super_leo        ###   ########.fr       */
+/*   Updated: 2022/09/10 13:08:17 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,15 @@ int	so_long(t_data *sl)
 		{
 			get_images(sl);
 			mlx_loop_hook(sl->mlx, &screen_update, sl);
+			mlx_hook(sl->win, 2, (1L<<0), &keypress_handler, sl);
 			mlx_loop(sl->mlx);
-		}
+		}		
 		mlx_destroy_display(sl->mlx);
 	}
 	return (0);
 }
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	t_data	sl;
 
@@ -66,22 +67,14 @@ int	main(int argc, char **argv)
 			so_long(&sl);
 	}
 	return (0);
-}
+}*/
 
-/*int	main(void)
+int	main(void)
 {
 	t_data	sl;
 
 	set_struct(&sl);
 	if (file_check(&sl, "map01.ber") == 0)
-	{
-		printf("Player -> %u, %u\n", sl.player.col, sl.player.row);
-		while (sl.enemies)
-		{
-			printf("Enemy -> %c - %u, %u\n", sl.enemies->direction,
-				sl.enemies->col, sl.enemies->row);
-			sl.enemies = sl.enemies->next;
-		}
-	}
+		so_long(&sl);
 	return (0);
-}*/
+}

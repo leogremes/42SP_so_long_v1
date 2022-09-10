@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   point_to_image.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: super_leo <super_leo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 08:30:56 by super_leo         #+#    #+#             */
-/*   Updated: 2022/09/10 08:36:47 by super_leo        ###   ########.fr       */
+/*   Updated: 2022/09/10 12:35:57 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	*point_to_player_image(t_data *sl)
 {
 	if (sl->player.direction == 'u')
 		return (sl->img_anim->p_u);
-	else if (sl->player.direction == 'u')
+	else if (sl->player.direction == 'd')
 		return (sl->img_anim->p_d);
 	else if (sl->player.direction == 'r')
 		return (sl->img_anim->p_r);
