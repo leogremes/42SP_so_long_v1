@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 23:41:44 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/11 13:24:31 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 15:41:49 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ int	screen_update(t_data *sl)
 	void			*img_ptr;
 
 	
+	tick_counter(sl);
 	if (sl->win)
 	{
-		tick_counter(sl);
 		print_banner(sl);
 		row = -1;
 		while (++row < sl->rows)
@@ -88,13 +88,4 @@ int	screen_update(t_data *sl)
 		}
 	}
 	return (0);
-}
-
-void	close_game(t_data *sl)
-{
-	destroy_window(sl);
-	free_static_images(sl);
-	free_animated_images(sl);
-	free_map(sl);
-	free_enemies_list(sl);
 }

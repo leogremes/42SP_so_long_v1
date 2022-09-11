@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:39:47 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/11 14:16:28 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 17:32:07 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	so_long(t_data *sl)
 			get_images(sl);
 			mlx_loop_hook(sl->mlx, &screen_update, sl);
 			mlx_hook(sl->win, 2, (1L<<0), &keypress_handler, sl);
+			mlx_hook(sl->win, 17, 0, &closed_by_user, sl);
 			mlx_loop(sl->mlx);
 		}		
 		mlx_destroy_display(sl->mlx);
@@ -55,7 +56,7 @@ int	so_long(t_data *sl)
 	return (0);
 }
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	t_data	sl;
 
@@ -68,9 +69,9 @@ int	main(int argc, char **argv)
 			so_long(&sl);
 	}
 	return (0);
-}
+}*/
 
-/*int	main(void)
+int	main(void)
 {
 	t_data	sl;
 
@@ -78,4 +79,4 @@ int	main(int argc, char **argv)
 	if (file_check(&sl, "map01.ber") == 0)
 		so_long(&sl);
 	return (0);
-}*/
+}

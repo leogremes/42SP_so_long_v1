@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 10:32:07 by super_leo         #+#    #+#             */
-/*   Updated: 2022/09/10 13:04:41 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 15:26:15 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ static void check_player_movement(int row_dst, int col_dst, t_data *sl)
     else if (c == 'E')
     {
         if (sl->collectibles == 0)
-            close_game(sl);
+            win_game(sl);
     }
     else if (c == 'h' || c == 'H' || c == 'v' || c == 'V')
-            close_game(sl);
+            lose_game(sl);
 }
 
 int keypress_handler(int keycode, t_data *sl)
@@ -65,6 +65,6 @@ int keypress_handler(int keycode, t_data *sl)
         check_player_movement(sl->player.row, sl->player.col + 1, sl);
     }
     else if (keycode == KEY_ESC)
-        close_game(sl);
+        closed_by_user(sl);
     return (0);
 }

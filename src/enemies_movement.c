@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 13:00:50 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/11 13:44:04 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 15:47:39 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,35 +56,42 @@ static void change_direction(t_data *sl, t_char *enemy)
     }
 }
 
-static void check_enemy_move(unsigned int row_dst, unsigned int col_dst,
+static int check_enemy_move(unsigned int row_dst, unsigned int col_dst,
     t_data *sl, t_char *enemy)
 {
     if (sl->map[row_dst][col_dst] == '0')
         move_enemy(row_dst, col_dst, sl, enemy);
     else if (sl->map[row_dst][col_dst] == 'P')
-        close_game(sl);
+    {
+        lose_game(sl);
+        return (1);
+    }
     else
         change_direction(sl, enemy);
+    return (0);
 }
 
 void    enemies_movement(t_data *sl)
 {
     t_char  *tmp;
+    int     end_game;
 
     if (sl->enemies)
     {
+        end_game = 0;
         tmp = sl->enemies;
-        while (tmp)
+        while (tmp && !end_game)
         {
             if (tmp->direction == 'u')
-                check_enemy_move(tmp->row - 1, tmp->col, sl, tmp);
+                end_game = check_enemy_move(tmp->row - 1, tmp->col, sl, tmp);
             else if (tmp->direction =='d')
-                check_enemy_move(tmp->row + 1, tmp->col, sl, tmp);
+                end_game = check_enemy_move(tmp->row + 1, tmp->col, sl, tmp);
             else if (tmp->direction == 'r')
-                check_enemy_move(tmp->row, tmp->col + 1, sl, tmp);
+                end_game = check_enemy_move(tmp->row, tmp->col + 1, sl, tmp);
             else
-                check_enemy_move(tmp->row, tmp->col - 1, sl, tmp);
-            tmp = tmp->next;
+                end_game = check_enemy_move(tmp->row, tmp->col - 1, sl, tmp);
+            if (!end_game)
+                tmp = tmp->next;
         }
     }
 }

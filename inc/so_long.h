@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 16:01:20 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/11 13:24:06 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:03:19 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,9 @@ void	free_enemies_list(t_data *sl);
 void	get_animated_nodes(t_data *sl);
 void	get_images(t_data *sl);
 int		screen_update(t_data *sl);
-void	close_game(t_data *sl);
+int		closed_by_user(t_data *sl);
+void	win_game(t_data *sl);
+void	lose_game(t_data *sl);
 void	*point_to_image(unsigned int row, unsigned int col, t_data *sl);
 void	*point_to_number_image(int n, t_data *sl);
 int		keypress_handler(int keycode, t_data *sl);
