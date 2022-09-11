@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 23:41:44 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/10 13:03:43 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 13:24:31 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	tick_counter(t_data *sl)
 		sl->anim_tick++;
 	if (sl->enem_tick == ENEMY_MOVE_TICKRATE)
 	{
-		//enemy_moves(sl);
+		enemies_movement(sl);
 		sl->enem_tick = 1;
 	}
 	else

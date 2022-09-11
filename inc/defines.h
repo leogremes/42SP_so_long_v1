@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:39:06 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/10 12:35:58 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 13:28:30 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define DEFINES_H
 
 # define ANIM_TICKRATE 250
-# define ENEMY_MOVE_TICKRATE 125
+# define ENEMY_MOVE_TICKRATE 1000
 
 # define KEY_W 119
 # define KEY_A 97

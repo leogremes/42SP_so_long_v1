@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enemies_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leda-sil <leda-sil@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 22:05:37 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/08 23:17:59 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 13:05:29 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ void	create_enemy(t_data *sl, unsigned int row, unsigned int col)
 	char	c;
 
 	c = sl->map[row][col];
-	if (c == 'H')
+	if (c == 'V')
 		new = new_enemy_node('u', row, col);
-	else if (c == 'h')
+	else if (c == 'v')
 		new = new_enemy_node('d', row, col);
-	else if (c == 'V')
+	else if (c == 'H')
 		new = new_enemy_node ('r', row, col);
 	else
 		new = new_enemy_node ('l', row, col);

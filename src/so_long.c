@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:39:47 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/10 13:08:17 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 14:16:28 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,12 @@ int	so_long(t_data *sl)
 			mlx_loop(sl->mlx);
 		}		
 		mlx_destroy_display(sl->mlx);
+		free(sl->mlx);
 	}
 	return (0);
 }
 
-/*int	main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_data	sl;
 
@@ -67,9 +68,9 @@ int	so_long(t_data *sl)
 			so_long(&sl);
 	}
 	return (0);
-}*/
+}
 
-int	main(void)
+/*int	main(void)
 {
 	t_data	sl;
 
@@ -77,4 +78,4 @@ int	main(void)
 	if (file_check(&sl, "map01.ber") == 0)
 		so_long(&sl);
 	return (0);
-}
+}*/

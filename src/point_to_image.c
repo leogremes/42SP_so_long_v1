@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 08:30:56 by super_leo         #+#    #+#             */
-/*   Updated: 2022/09/10 12:35:57 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 13:28:25 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	*point_to_image(unsigned int row, unsigned int col, t_data *sl)
 	else if (sl->map[row][col] == 'C')
 		return (sl->img_anim->col);
 	else if (sl->map[row][col] == 'H')
-		return (sl->img_anim->e_u);
-	else if (sl->map[row][col] == 'h')
-		return (sl->img_anim->e_d);
-	else if (sl->map[row][col] == 'V')
 		return (sl->img_anim->e_r);
-	else if (sl->map[row][col] == 'v')
+	else if (sl->map[row][col] == 'h')
 		return (sl->img_anim->e_l);
+	else if (sl->map[row][col] == 'V')
+		return (sl->img_anim->e_u);
+	else if (sl->map[row][col] == 'v')
+		return (sl->img_anim->e_d);
 	else if (sl->map[row][col] == 'P')
 		return (point_to_player_image(sl));
 	else
