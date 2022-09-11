@@ -1,7 +1,9 @@
-##Faltando
+###Faltando
 
-> Programar eventos de tecla
-> Programar movimentos do jogador
-> Programar movimentos dos inimigos
-> Programar eventos de fechar a janela
-> Liberar todas as memórias alocadas.
+-> Fazer o Makefile<br>
+-> Tirar os comentários da MAIN(so_long.c)<br>
+-> Passar a Norminette<br>
+-> Subir no repositório da 42<br>
+-> Verificar lentidão em mapas grandes<br>
+
+-> CONFERIR NOVAMENTE VAZAMENTOS DE MEMÓRIA E VALIDAÇÕES DE MAPA

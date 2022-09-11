@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 14:54:37 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/11 16:57:14 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/11 18:26:37 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ static void close_game(t_data *sl)
 	free_animated_images(sl);
 	free_map(sl);
 	free_enemies_list(sl);
+      mlx_destroy_display(sl->mlx);
+      free(sl->mlx);
+      exit(0);
 }
 
 int closed_by_user(t_data *sl)
