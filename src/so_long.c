@@ -6,7 +6,7 @@
 /*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:39:47 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/11 18:32:43 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/12 07:16:39 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-
-/* int	main(void)
-{
-	t_data	sl;
-
-	set_struct(&sl);
-	if (file_check(&sl, "map01.ber") == 0)
-		so_long(&sl);
-	return (0);
-} */
