@@ -1,7 +1,7 @@
-### Faltando
+# SO_LONG
 
--> Passar a Norminette<br>
--> Subir no repositório da 42<br>
--> Verificar lentidão em mapas grandes<br>
+## Objetivo
+O objetivo deste projeto é criar um jogo onde o personagem principal deve pegar os itens coletáveis e se dirigir para a saída do mapa.
 
--> CONFERIR NOVAMENTE VAZAMENTOS DE MEMÓRIA E VALIDAÇÕES DE MAPA
+## Pendências
+-> Verificar a lentidão do jogo em mapas grandes.
