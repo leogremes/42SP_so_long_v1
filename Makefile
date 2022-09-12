@@ -49,7 +49,7 @@ $(NAME): $(OBJ) $(MLX)
 <+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+>\n\
 <                                                    >\n\
 <            YOUR GAME IS READY TO PLAY              >\n\
-<      Type \033[47m\"so_long <map_name>.ber\"\033[m to play         >\n\
+<      Type \033[47m\"./so_long <map_name>.ber\"\033[m to play         >\n\
 < Type \033[47m\"ls -1 maps/*ber\"\033[m to see the available maps   >\n\
 <                                                    >\n\
 <+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+>\n\n"
