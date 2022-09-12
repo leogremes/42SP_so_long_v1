@@ -1,10 +1,3 @@
-# SRC		=		utils/*		\
-# 				src/*		\
-
-# all:
-# 	cc -Wall -Werror -Wextra $(SRC) -L. -lmlx -Iinc -lX11 -lXext -g
-# #	cc -Wall -Werror -Wextra $(SRC) -Iinc -lX11 -lXext -lmlx
-
 SRC_DIR				=	src/
 SRC_FILES			=	enemies_list.c			enemies_movement.c		\
 						file_check.c			free_img.c				\
@@ -49,7 +42,7 @@ $(NAME): $(OBJ) $(MLX)
 <+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+>\n\
 <                                                    >\n\
 <            YOUR GAME IS READY TO PLAY              >\n\
-<      Type \033[47m\"./so_long <map_name>.ber\"\033[m to play         >\n\
+<      Type \033[47m\"./so_long <map_name>.ber\"\033[m to play       >\n\
 < Type \033[47m\"ls -1 maps/*ber\"\033[m to see the available maps   >\n\
 <                                                    >\n\
 <+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+><+>\n\n"
