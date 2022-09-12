@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: leda-sil <leda-sil@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 23:41:44 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/11 18:10:08 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/12 13:46:53 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	print_banner(t_data *sl)
 			img_ptr = point_to_number_image(moves % 10, sl);
 		if (img_ptr)
 		{
-			mlx_put_image_to_window(sl->mlx, sl->win, img_ptr, 
+			mlx_put_image_to_window(sl->mlx, sl->win, img_ptr,
 				(BANNER_HEIGHT * 7) + ((len - i) * BANNER_HEIGHT), 0);
 			moves /= 10;
 		}
@@ -67,7 +67,6 @@ int	screen_update(t_data *sl)
 	unsigned int	col;
 	void			*img_ptr;
 
-	
 	tick_counter(sl);
 	if (sl->win)
 	{

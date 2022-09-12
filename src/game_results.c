@@ -3,72 +3,72 @@
 /*                                                        :::      ::::::::   */
 /*   game_results.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leda-sil <leda-sil@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: leda-sil <leda-sil@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 14:54:37 by leda-sil          #+#    #+#             */
-/*   Updated: 2022/09/11 18:26:37 by leda-sil         ###   ########.fr       */
+/*   Updated: 2022/09/12 13:47:46 by leda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "so_long.h"
 
-static void close_game(t_data *sl)
+static void	close_game(t_data *sl)
 {
 	destroy_window(sl);
 	free_static_images(sl);
 	free_animated_images(sl);
 	free_map(sl);
 	free_enemies_list(sl);
-      mlx_destroy_display(sl->mlx);
-      free(sl->mlx);
-      exit(0);
+	mlx_destroy_display(sl->mlx);
+	free(sl->mlx);
+	exit(0);
 }
 
-int closed_by_user(t_data *sl)
+int	closed_by_user(t_data *sl)
 {
-    ft_putendl("Game closed by user!");
-    close_game(sl);
-    return (0);
+	ft_putendl("Game closed by user!");
+	close_game(sl);
+	return (0);
 }
 
-void win_game(t_data *sl)
+void	win_game(t_data *sl)
 {
-    ft_putchar('\n');
-    ft_putstr(WIN_COLOR);
-    ft_putendl("██╗   ██╗   ██████╗   ██╗   ██╗\
+	ft_putchar('\n');
+	ft_putstr(WIN_COLOR);
+	ft_putendl("██╗   ██╗   ██████╗   ██╗   ██╗\
           ██╗    ██╗  ██╗  ███╗   ██╗  ██╗");
-    ft_putendl("╚██╗ ██╔╝  ██╔═══██╗  ██║   ██║\
+	ft_putendl("╚██╗ ██╔╝  ██╔═══██╗  ██║   ██║\
           ██║    ██║  ██║  ████╗  ██║  ██║");
-    ft_putendl(" ╚████╔╝   ██║   ██║  ██║   ██║\
+	ft_putendl(" ╚████╔╝   ██║   ██║  ██║   ██║\
           ██║ █╗ ██║  ██║  ██╔██╗ ██║  ██║");
-    ft_putendl("  ╚██╔╝    ██║   ██║  ██║   ██║\
+	ft_putendl("  ╚██╔╝    ██║   ██║  ██║   ██║\
           ██║███╗██║  ██║  ██║╚██╗██║  ╚═╝");
-    ft_putendl("   ██║     ╚██████╔╝  ╚██████╔╝\
+	ft_putendl("   ██║     ╚██████╔╝  ╚██████╔╝\
           ╚███╔███╔╝  ██║  ██║ ╚████║  ██╗");
-    ft_putstr("   ╚═╝      ╚═════╝    ╚═════╝\
+	ft_putstr("   ╚═╝      ╚═════╝    ╚═════╝\
             ╚══╝╚══╝   ╚═╝  ╚═╝  ╚═══╝  ╚═╝");
-    ft_putendl(DEF_COLOR);
-    ft_putchar('\n');
-    close_game(sl);
+	ft_putendl(DEF_COLOR);
+	ft_putchar('\n');
+	close_game(sl);
 }
 
-void    lose_game(t_data *sl)
+void	lose_game(t_data *sl)
 {
-    ft_putchar('\n');
-    ft_putstr(LOSE_COLOR);
-    ft_putendl("██╗   ██╗   ██████╗   ██╗   ██╗\
+	ft_putchar('\n');
+	ft_putstr(LOSE_COLOR);
+	ft_putendl("██╗   ██╗   ██████╗   ██╗   ██╗\
           ██╗        ██████╗   ███████╗  ███████╗  ██╗");
-    ft_putendl("╚██╗ ██╔╝  ██╔═══██╗  ██║   ██║\
+	ft_putendl("╚██╗ ██╔╝  ██╔═══██╗  ██║   ██║\
           ██║       ██╔═══██╗  ██╔════╝  ██╔════╝  ██║");
-    ft_putendl(" ╚████╔╝   ██║   ██║  ██║   ██║\
+	ft_putendl(" ╚████╔╝   ██║   ██║  ██║   ██║\
           ██║       ██║   ██║  ███████╗  █████╗    ██║");
-    ft_putendl("  ╚██╔╝    ██║   ██║  ██║   ██║\
+	ft_putendl("  ╚██╔╝    ██║   ██║  ██║   ██║\
           ██║       ██║   ██║  ╚════██║  ██╔══╝    ╚═╝");
-    ft_putendl("   ██║     ╚██████╔╝  ╚██████╔╝\
+	ft_putendl("   ██║     ╚██████╔╝  ╚██████╔╝\
           ███████╗  ╚██████╔╝  ███████║  ███████╗  ██╗");
-    ft_putstr("   ╚═╝      ╚═════╝    ╚═════╝\
+	ft_putstr("   ╚═╝      ╚═════╝    ╚═════╝\
            ╚══════╝   ╚═════╝   ╚══════╝  ╚══════╝  ╚═╝");
-    ft_putendl(DEF_COLOR);
-    ft_putchar('\n');
-    close_game(sl);
+	ft_putendl(DEF_COLOR);
+	ft_putchar('\n');
+	close_game(sl);
 }
